@@ -1,5 +1,7 @@
 # 🔔 Notification Service
 
+[![Java CI with Maven](https://github.com/yusufkayiss/notification-service/actions/workflows/maven.yml/badge.svg)](https://github.com/yusufkayiss/notification-service/actions/workflows/maven.yml)
+
 Decoupled event-driven notification microservice consuming real-time order events via RabbitMQ.
 
 ---
