@@ -19,11 +19,11 @@ A lightweight microservice built with Spring Boot and Spring AMQP. It listens to
 ### 📐 Architecture & Event Flow
 
 ```mermaid
-graph LR
-    CoreAPI[ecommerce-core-api] -->|Publish OrderCreatedEvent| Exchange[RabbitMQ Exchange]
-    Exchange -->|Route Message| Queue[order.created.queue]
-    Queue -->|Consume Event| Consumer[OrderConsumer in notification-service]
-    Consumer -->|Process & Log| Email[Email Simulation Output]
+graph TD
+    CoreAPI["ecommerce-core-api"] -->|Publish OrderCreatedEvent| Exchange["RabbitMQ Exchange"]
+    Exchange -->|Route Message| Queue["order.created.queue"]
+    Queue -->|Consume Event| Consumer["OrderConsumer (notification-service)"]
+    Consumer -->|Process & Log| Email["Email Simulation Output"]
 ```
 
 ### 💻 Getting Started (Installation)
@@ -69,11 +69,11 @@ Spring Boot ve Spring AMQP altyapısıyla geliştirilmiş, bağımsız bildirim 
 ### 📐 Mimari & Olay Akışı
 
 ```mermaid
-graph LR
-    CoreAPI[ecommerce-core-api] -->|OrderCreatedEvent Yayınlar| Exchange[RabbitMQ Exchange]
-    Exchange -->|Mesajı Yönlendir| Queue[order.created.queue]
-    Queue -->|Mesajı Tüket| Consumer[OrderConsumer - notification-service]
-    Consumer -->|İşle & Logla| Email[E-posta Simülasyon Çıktısı]
+graph TD
+    CoreAPI["ecommerce-core-api"] -->|OrderCreatedEvent Yayınlar| Exchange["RabbitMQ Exchange"]
+    Exchange -->|Mesajı Yönlendir| Queue["order.created.queue"]
+    Queue -->|Mesajı Tüket| Consumer["OrderConsumer (notification-service)"]
+    Consumer -->|İşle & Logla| Email["E-posta Simülasyon Çıktısı"]
 ```
 
 ### 💻 Kurulum Adımları
